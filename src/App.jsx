@@ -5,11 +5,12 @@ function App() {
     <main>
       <div id="game-container">
         <ol id="players">
-          <PlayerCard name="Player 1" symbol="X" />
-          <PlayerCard name="Player 2" symbol="O" />
+          <PlayerCard initialName="Player 1" symbol="X" />
+          <PlayerCard initialName="Player 2" symbol="O" />
         </ol>
         GAME BOARD
       </div>
+      LOG
     </main>
   );
 }
