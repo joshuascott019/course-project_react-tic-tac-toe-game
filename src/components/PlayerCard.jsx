@@ -1,6 +1,11 @@
 import { useState } from 'react';
 
-export default function PlayerCard({ initialName, symbol, isActive }) {
+export default function PlayerCard({
+  initialName,
+  symbol,
+  isActive,
+  onChangeName,
+}) {
   const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
   let editablePlayerName = <span className="player-name">{playerName}</span>;
@@ -19,6 +24,9 @@ export default function PlayerCard({ initialName, symbol, isActive }) {
 
   function handleEditClick() {
     setIsEditing((editing) => !editing);
+    if (isEditing) {
+      onChangeName(symbol, playerName);
+    }
   }
 
   return (
